@@ -31,7 +31,7 @@ router.post(
  * @access Admin required
  */
 router.put(
-  "/:id/update",
+  "/:id",
   authMiddleware.loginRequired,
   authMiddleware.adminRequired,
   productController.updateProduct
@@ -42,7 +42,7 @@ router.put(
  * @access Admin required
  */
 router.delete(
-  "/:id/delete",
+  "/:id",
   authMiddleware.loginRequired,
   authMiddleware.adminRequired,
   productController.deleteProduct

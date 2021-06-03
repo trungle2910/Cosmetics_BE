@@ -85,11 +85,12 @@ productController.addProduct = async (req, res, next) => {
 productController.updateProduct = async (req, res, next) => {
   try {
     const productId = req.params.id;
-    const { name, description, price, images } = req.body;
+    const { name, description, price, category, salePrice, imageUrl } =
+      req.body;
 
     const product = await Product.findOneAndUpdate(
       { _id: productId },
-      { name, description, price, images },
+      { name, description, price, category, salePrice, imageUrl },
       { new: true }
     );
     if (!product) {
